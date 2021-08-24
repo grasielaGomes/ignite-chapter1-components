@@ -1,27 +1,11 @@
 import { useEffect, useState } from 'react';
 import { MovieCard } from './MovieCard';
 import { api } from '../services/api';
+import { MovieProps, GenreResponseProps } from './types';
 import '../styles/content.scss';
 
 interface ContentProps {
   selectedGenreId: number;
-}
-
-interface GenreResponseProps {
-  id: number;
-  name: 'action' | 'comedy' | 'documentary' | 'drama' | 'horror' | 'family';
-  title: string;
-}
-
-interface MovieProps {
-  imdbID: string;
-  Title: string;
-  Poster: string;
-  Ratings: Array<{
-    Source: string;
-    Value: string;
-  }>;
-  Runtime: string;
 }
 
 export function Content ({ selectedGenreId }: ContentProps) {
